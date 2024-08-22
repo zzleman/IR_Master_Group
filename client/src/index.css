@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    --primary-gold: #ffb703;
+    --secondary-color: #2ecc71;
+}
+
+* {
+    font-family: "Manrope", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
