@@ -1,0 +1,112 @@
+{
+    "header": {
+        "home": "Home Page",
+        "about": "About Us",
+        "services": "Services",
+        "references": "References",
+        "partners": "Partners",
+        "licenses": "Licenses and Recommendation Letters",
+        "contact": "Contact",
+        "licenses-sm": "Licenses",
+        "projects": "Projects"
+    },
+    "footer": {
+        "info": "'IR Master Group' Limited Liability Company was founded in 2017. 'İR Master Group' LLC carries out repair, construction, installation and after-sales service of electricity, heating, cooling, ventilation and water supply systems.",
+        "links": "Links",
+        "home": "Home Page",
+        "about": "About Us",
+        "services": "Services",
+        "references": "References",
+        "partners": "Partners",
+        "licenses": "Licenses and Recommendation Letters",
+        "contact": "Contact",
+        "phone": "Phone",
+        "mail": "E-mail",
+        "address": "Address"
+    },
+    "about": {
+        "title": "About Us",
+        "us": "Who Are We?",
+        "mission": "Our Mission",
+        "safety": "Workplace Safety",
+        "us_info": "'IR Master Group' LLC was established in 2017. 'IR Master Group' LLC specializes in the installation and post-sales service of repair, construction, electrical, heating, cooling, ventilation, and water supply systems. Our company’s core principles are based on customer satisfaction. 'IR Master Group' LLC has ample experience in delivering services and providing service maintenance. Additionally, planning and designing works is one of the company’s main activities.",
+        "mission_info": "As 'IR Master Group' LLC, we guarantee the highest level of solutions for projects of any scale and complexity. With professionalism, experience, and a strong engineering team, our company can minimize risks and ensure the quality execution of tasks. 'IR Master Group LLC' was established in 2017. Our main goal is to provide quality services with a professional approach, reliability, customer satisfaction, and a unique style in the construction sector. Operating with a team of professional engineers and workers, 'IR Master Group LLC' is also a reliable partner. Delivering projects with high-quality materials, according to standards, and on time is our main priority.",
+        "safety_info": "'IR Master Group LLC' was established in 2017. Our main goal is to provide quality services with a professional approach, reliability, customer satisfaction, and a unique style in the construction sector. Operating with a team of professional engineers and workers, 'IR Master Group LLC' is also a reliable partner. Delivering projects with high-quality materials, according to standards, and on time is our main priority.",
+        "more": "More"
+    },
+    "services": {
+        "title": "Our Services",
+        "description": "IRM Master Group is a specialized company in the installation and design of repair, construction, electrical, heating, cooling, ventilation, and water supply systems in the Azerbaijani market. We perform installation and service work for heating, cooling, ventilation, as well as cooling systems for server rooms with high professionalism. Our main goal is to satisfy our customers and achieve the highest quality.",
+        "services": {
+            "01": {
+                "title": "Repair and Construction Services",
+                "items": [
+                    "Construction",
+                    "Reinforced concrete works",
+                    "Implementation of works according to any taste and design in repair-construction works. Current and major repairs of new and existing projects."
+                ]
+            },
+            "02": {
+                "title": "Heating Systems",
+                "items": [
+                    "Installation of heating systems with all types of equipment powered by electricity and natural gas in production, warehouse, residential, and non-residential areas. Examples include chillers, rooftops, gas and electric air conditioners, boilers, hot water and electric floor systems, radiators, and equipment."
+                ]
+            },
+            "03": {
+                "title": "Cooling Systems",
+                "items": [
+                    "Cooling of production, warehouse, residential, and non-residential areas using chillers, rooftops, centralized and split air conditioners."
+                ]
+            },
+            "04": {
+                "title": "Water Supply (Sanitary)",
+                "items": [
+                    "INTERNAL AND EXTERNAL WATER LINES",
+                    "SEWAGE WATER LINES",
+                    "HOT FLOOR",
+                    "PUMP ROOM"
+                ]
+            },
+            "05": {
+                "title": "Ventilation",
+                "items": [
+                    "Installation of ventilation systems for medical centers, clinics, production, warehouses, residential, and non-residential areas."
+                ]
+            },
+            "06": {
+                "title": "Supply",
+                "items": [
+                    "Provision of construction and non-construction materials according to customer requests."
+                ]
+            }
+        }
+    },
+    "pagination": {
+        "next": "Next",
+        "prev": "Previous"
+    },
+    "licenses": {
+        "licenses": "Licenses",
+        "recommendation": "Recommendation Letters"
+    },
+    "contact": {
+        "info": "Contact Information",
+        "address": "Address",
+        "number": "Contact Details",
+        "phone": "Phone",
+        "email": "Email",
+        "hour": "Working Hours",
+        "timeline": "Monday - Friday: 8:00 - 18:00",
+        "weekend": "Weekend",
+        "closed": "Closed",
+        "help": "How can we assist you?",
+        "name": "Your Name",
+        "mailto": "Your Email Address",
+        "phoneto": "Your Contact Number",
+        "subject": "Subject",
+        "message": "Your Message",
+        "send": "Send",
+        "sent": "Your message has been sent!",
+        "notSent": "Your message could not be sent. Please try again."
+    }
+}

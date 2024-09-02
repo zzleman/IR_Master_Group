@@ -5,33 +5,36 @@ import 'slick-carousel/slick/slick-theme.css';
 import "./Carousel.scss"
 const Carousel = () => {
   const images = [
-    '/img/pic1.jpg',
-    '/img/pic2.jpg',
-    '/img/pic3.jpg',
+    '/img/slider-6.jpg',
+    '/img/slider-1.webp',
+    '/img/slider-2.jpeg',
+    '/img/slider-3.jpeg',
+    '/img/slider-4.jpeg',
+    '/img/slider-5.jpeg',
   ];
 
-  const settings = {
-    dots: true,           
-    infinite: true,      
-    speed: 500,         
-    slidesToShow: 1,     
-    slidesToScroll: 1,  
-    autoplay: true,     
-    autoplaySpeed: 2000, 
-  };
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+};
+
 
   return (
-    <Slider {...settings}>
+    <div className='carousel-container overflow-hidden '>
+       <Slider {...settings}>
       {images.map((image, index) => (
         <div key={index} className="mt-24 overflow-hidden">
-          <img
-            src={image}
-            alt={`Slide ${index + 1}`}
-            style={{ width: '100%', height: '600px', objectFit: 'cover' }}
+          <img className='w-full h-96 lg:h-[680px] object-cover' src={image} alt={`Slide ${index + 1}`}
           />
         </div>
       ))}
     </Slider>
+    </div>
   );
   
 };

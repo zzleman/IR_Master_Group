@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-    --primary-gold: #ffb703;
+    --primary-blue: #0c4da2;
     --secondary-color: #2ecc71;
 }
 
@@ -11,4 +11,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    overflow-x: hidden;
 }

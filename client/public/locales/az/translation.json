@@ -1,0 +1,112 @@
+{
+    "header": {
+        "home": "Ana Səhifə",
+        "about": "Haqqımızda",
+        "services": "Xidmətlər",
+        "references": "Referanslar",
+        "partners": "Partnyorlar",
+        "licenses": "Lisenziya və Tövsiyyə Məktubları",
+        "contact": "Əlaqə",
+        "licenses-sm": "Lisenziyalar",
+        "projects": "Layihələr"
+    },
+    "footer": {
+        "info": "'İR Master Group'' Məhdud Məsuliyyətli Cəmiyyəti 2017-cu ildə təsis edilmişdir. ''İR Master Group'' MMC təmir, tikinti, elektrik, isitmə, soyutma, havalandırma və su təchizatı sistemlərinin quraşdırılması və satış sonrası servisini həyata keçirir.",
+        "links": "Keçidlər",
+        "home": "Ana Səhifə",
+        "about": "Haqqımızda",
+        "services": "Xidmətlər",
+        "references": "Referanslar",
+        "partners": "Partnyorlar",
+        "licenses": "Lisenziya və Tövsiyyə Məktubları",
+        "contact": "Əlaqə",
+        "phone": "Telefon",
+        "mail": "E-poçt",
+        "address": "Ünvan"
+    },
+    "about": {
+        "title": "Haqqımızda",
+        "us": "Biz kimik?",
+        "mission": "Missiyamız",
+        "safety": "Əməyin Təhlükəsizliyi",
+        "us_info": "'İR Master Group' Məhdud Məsuliyyətli Cəmiyyəti 2017-cu ildə təsis edilmişdir. 'İR Master Group' MMC təmir, tikinti , elektrik , isitmə , soyutma , havalandırma və su təchizatı sistemlərinin quraşdırılması və satış sonrası servisini həyata keçirir. Şirkətimizin əsas meyyarları müştəri məmnuniyyətinin üzərində qurulmuşdur. 'İR Master Group' MMC xidmətlərin yerinə yetirilməsində və servis xidmətlərinin göstərilməsi yönündə yetərincə təcrübəyə malikdir. Bunlarla yanaşı işlərin layihələndirilməsini də şirkətin əsəs fəaliyyət istiqamətlərindəndir.",
+        "mission_info": "'İR Master Group' MMC olaraq istənilən miqyaslı və mürəkkəb layihələrin ən yüksək səviyyədə həllini həyata keçirilməsinə zəmanət veririk. Peşəkarlıq, təcrübə və güclü mühəndis heyyəti ilə şirkətimiz riskləri minimuma endirə və işlərin keyfiyyətlə həyata keçirilməsini təmin edə bilir. 'İR Master Group MMC' 2017- ci ildə təsis edilmişdir. Şirkətimizin əsas hədəfi peşəkar iş, dayanıqlılıq, müştəri məmnuniyyəti və inşaat sektorunda özünəməxsus dəsti-xətt ilə müştərilərə keyfiyyətli xidmət göstərməkdir. Professional mühəndis və işçi heyəti ilə fəaliyyət göstərən 'İR Master Group MMC' eyni zamanda etibarlı bir tərəfdaşdır. Layihələrin keyfiyyətli materiallarla, standartlara uyğun və vaxtında təhvilverilməsi əsas prioritetimizdir",
+        "safety_info": "İR Master Group MMC 2017- ci ildə təsis edilmişdir. Şirkətimizin əsas hədəfi peşəkar iş, dayanıqlılıq, müştəri məmnuniyyəti və inşaat sektorunda özünəməxsus dəsti-xətt ilə müştərilərə keyfiyyətli xidmət göstərməkdir. Professional mühəndis və işçi heyəti ilə fəaliyyət göstərən İR Master Group MMC eyni zamanda etibarlı bir tərəfdaşdır. Layihələrin keyfiyyətli materiallarla, standartlara uyğun və vaxtında təhvil verilməsi əsas prioritetimizdir.",
+        "more": "Daha çox"
+    },
+    "services": {
+        "title": "Xidmətlərimiz",
+        "description": "İR Master Group MMC Azərbaycan bazarında təmir, tikinti, elektrik, istilik, soyutma, havalandırma və su təchizatı sistemlərinin quraşdırılması və layihələndirilməsi sektorunda tam ixtisaslaşmış şirkət olaraq fəaliyyət göstərir. İsitmə, soyutma, havalandırma, həmçinin server otaqlarının soyudulması sistemlərinin quraşdırılması işlərini və servis xidmətlərini yüksək peşəkarlıqla həyata keçirir. Ən böyük hədəfimiz isə müştərilərimizi məmnun salmaq və maksimum keyfiyyətə nail olmaqdır.",
+        "services": {
+            "01": {
+                "title": "Təmir və Tikinti xidməti",
+                "items": [
+                    "Tikinti",
+                    "Dəmir-Beton işləri",
+                    "Təmir-Tikinti işlərində istənilən zövə və dizayna uyğun işlərin həyata keçrilməsi. Yeni və mövcud layihələrin cari və əsaslı təmir işləri."
+                ]
+            },
+            "02": {
+                "title": "İsitmə Sistemləri",
+                "items": [
+                    "İstehsalat, ambar, yaşayış və qeyri-yaşayış sahələrinin elektrik enerjisindən və təbii qazla qidalanan bütün növ avadanlıqlar ilə istilik sistemlərinin quraşdırılması. Buna misal olaraq çiller, ruftop, kondisioner qaznlar (təbii qaz və elektriklə işləyən), kombilər, su və elektrikli isti döşəmə sistemləri, radiator və aparey avadanlıqları ilə həyata keçirilir."
+                ]
+            },
+            "03": {
+                "title": "Soyutma Sistemləri",
+                "items": [
+                    "İstehsalat, ambar, yaşayış və qeyri-yaşayış sahələrinin soyutması çiller, ruftop, mərkəzləşdirilmiş və split kondisionerlər ilə həyata keçirilir."
+                ]
+            },
+            "04": {
+                "title": "Su Təchizatı (Santexnika)",
+                "items": [
+                    "DAXİLİ VƏ XARİCİ SU XƏTLƏRİ",
+                    "ÇİRKAB SU XƏTLƏRİ",
+                    "İSTİ DÖŞƏMƏ",
+                    "NASOSXANA"
+                ]
+            },
+            "05": {
+                "title": "Havalandırma",
+                "items": [
+                    "Tibb mərkəzləri, klinikalar, istehsalat, ambar, yaşayış və qeyri-yaşayış sahələrinin havalandırma sistemlərinin çəkilməsi."
+                ]
+            },
+            "06": {
+                "title": "Təchizat",
+                "items": [
+                    "Sifarişçilərin istəyinə uyğun olaraq inşaat və qeyri-inşaat materiallarının təchiz edilməsi."
+                ]
+            }
+        }
+    },
+    "pagination": {
+        "next": "Sonrakı",
+        "prev": "Əvvəlki"
+    },
+    "licenses": {
+        "licenses": "Lisenziyalar",
+        "recommendation": "Tövsiyyə Məktubları"
+    },
+    "contact": {
+        "info": "Əlaqə Məlumatları",
+        "address": "Ünvan",
+        "number": "Əlaqə Detalları",
+        "phone": "Telefon",
+        "email": "Email",
+        "hour": "İş Saatları",
+        "timeline": "Bazarertəsi - Cümə: 9:00 - 18:00",
+        "weekend": "Həftəsonu",
+        "closed": "Qapalı",
+        "help": "Sizə necə köməklik göstərə bilərik?",
+        "name": "Adınız",
+        "mailto": "Email Adresiniz",
+        "phoneto": "Əlaqə Nömrəniz",
+        "subject": "Mövzu",
+        "message": "Mesajınız",
+        "send": "Göndər",
+        "sent": "Mesajınız göndərildi!",
+        "notSent": "Mesajınız göndərilmədi. Yenidən cəhd edin."
+    }
+}
