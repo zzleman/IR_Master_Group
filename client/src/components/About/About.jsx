@@ -6,7 +6,6 @@ import { NavLink } from 'react-router-dom';
 const About = () => {
   const { t, i18n } = useTranslation();
 
-  // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -51,7 +50,7 @@ const About = () => {
         >
           <h1 className="text-4xl font-bold mb-3">{t('about.mission')}</h1>
           <p>{t('about.mission_info')}</p>
-          <NavLink to={`/${i18n.language}/about`}>
+          <NavLink to={`/about`}>
             <button className="bg-blue-950 bg-opacity-90 text-white p-2 w-40 h-11 rounded-xl mt-3">
               {t('about.more')}
             </button>

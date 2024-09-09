@@ -25,7 +25,7 @@ const FeaturedReferences = () => {
         setData(featuredItems);
 
         if (featuredItems.length === 0) {
-          console.warn('No featured references found.'); 
+          console.warn('No featured references found.');
         }
 
         setLoading(false);
@@ -61,9 +61,10 @@ const FeaturedReferences = () => {
         {data.map((item) => (
           <div key={item.id} className="references-slider">
             <img 
-              src={`${import.meta.env.VITE_APP_UPLOAD_URL}${item.attributes.img.data.attributes.url}`} 
+              src={item.attributes.img.data.attributes.url} 
               className="xl:px-20 my-5 w-10/12 mx-auto h-20 md:h-28 xl:h-[150px] object-contain" 
               loading="lazy" 
+              alt={`Reference ${item.id}`} 
             />
           </div>
         ))}

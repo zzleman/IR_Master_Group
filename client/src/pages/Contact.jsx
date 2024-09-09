@@ -16,10 +16,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        process.env.VITE_APP_EMAILJS_SERVICE_ID,
-        process.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID, 
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID, 
         form.current,
-        process.env.VITE_APP_EMAILJS_USER_ID
+        import.meta.env.VITE_APP_EMAILJS_USER_ID 
       )
       .then(
         (result) => {

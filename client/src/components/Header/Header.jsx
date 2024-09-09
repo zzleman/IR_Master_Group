@@ -15,8 +15,8 @@ const Header = () => {
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
-    const path = location.pathname.replace(/^\/[a-z]{2}/, '');
-    navigate(`/${lang}${path}`);
+    localStorage.setItem('i18nextLng', lang); 
+    navigate(location.pathname, { replace: true });
   };
 
   const toggleMenu = () => {
@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <div className="header h-24 w-full flex items-center px-1 md:px-10 justify-between gap-32 xl:gap-10 xl:px-10 fixed z-50 bg-white">
       <div className="left flex items-center gap-1">
-        <NavLink to={`/${i18n.language}`} className="lg:h-20 w-16">
+        <NavLink to="/" className="lg:h-20 w-16">
           <img className="h-20 w-16" src="/img/logo.png" alt="Logo" />
         </NavLink>
 
@@ -76,7 +76,7 @@ const Header = () => {
       </div>
 
       <div className="block xl:hidden">
-        <img className="h-10 cursor-pointer" src="/icons/menus.png" alt="Menu" onClick={toggleMenu} />
+        <img className="h-10 cursor-pointer" src="/icons/menu.png" alt="Menu" onClick={toggleMenu} />
       </div>
 
       {/* Full-Screen Overlay Menu */}
@@ -92,14 +92,14 @@ const Header = () => {
           &times;
         </button>
         <div>
-          <NavLink to={`/${i18n.language}`} className="lg:h-20 w-16">
+          <NavLink to="/" className="lg:h-20 w-16">
             <img className="h-20 w-16" src="/img/logo.png" alt="Logo" />
           </NavLink>
         </div>
         <ul className="flex flex-col gap-6 text-2xl">
           <li>
             <NavLink
-              to={`/${i18n.language}`}
+              to="/"
               className={({ isActive }) => `py-2 ${isActive ? 'text-blue-300 border-b-2 border-blue-300' : 'text-white hover:text-blue-300'}`}
               end
               onClick={toggleMenu}
@@ -109,7 +109,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to={`/${i18n.language}/about`}
+              to="/about"
               className={({ isActive }) => `py-2 ${isActive ? 'text-blue-300 border-b-2 border-blue-300' : 'text-white hover:text-blue-300'}`}
               onClick={toggleMenu}
             >
@@ -118,7 +118,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to={`/${i18n.language}/projects`}
+              to="/projects"
               className={({ isActive }) => `py-2 ${isActive ? 'text-blue-300 border-b-2 border-blue-300' : 'text-white hover:text-blue-300'}`}
               onClick={toggleMenu}
             >
@@ -127,7 +127,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to={`/${i18n.language}/services`}
+              to="/services"
               className={({ isActive }) => `py-2 ${isActive ? 'text-blue-300 border-b-2 border-blue-300' : 'text-white hover:text-blue-300'}`}
               onClick={toggleMenu}
             >
@@ -136,7 +136,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to={`/${i18n.language}/references`}
+              to="/references"
               className={({ isActive }) => `py-2 ${isActive ? 'text-blue-300 border-b-2 border-blue-300' : 'text-white hover:text-blue-300'}`}
               onClick={toggleMenu}
             >
@@ -145,7 +145,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to={`/${i18n.language}/partners`}
+              to="/partners"
               className={({ isActive }) => `py-2 ${isActive ? 'text-blue-300 border-b-2 border-blue-300' : 'text-white hover:text-blue-300'}`}
               onClick={toggleMenu}
             >
@@ -154,7 +154,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to={`/${i18n.language}/licenses`}
+              to="/licenses"
               className={({ isActive }) => `py-2 ${isActive ? 'text-blue-300 border-b-2 border-blue-300' : 'text-white hover:text-blue-300'}`}
               onClick={toggleMenu}
             >
@@ -163,7 +163,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to={`/${i18n.language}/contact`}
+              to="/contact"
               className={({ isActive }) => `py-2 ${isActive ? 'text-blue-300 border-b-2 border-blue-300' : 'text-white hover:text-blue-300'}`}
               onClick={toggleMenu}
             >
@@ -190,7 +190,7 @@ const Header = () => {
       <ul className="menu hidden xl:flex xl:items-center gap-6 text-nowrap">
         <li>
           <NavLink
-            to={`/${i18n.language}`}
+            to="/"
             className={({ isActive }) => `py-2 ${isActive ? 'text-blue-950 border-b-2 border-blue-950' : 'text-gray-400 hover:text-blue-950'}`}
             end
           >
@@ -209,7 +209,7 @@ const Header = () => {
             <ul className="absolute left-0 top-full mt-1 w-48 bg-white shadow-lg border border-gray-200">
               <li>
                 <NavLink
-                  to={`/${i18n.language}/about/`}
+                  to="/about"
                   className="block px-4 py-2 text-gray-700 hover:bg-blue-100"
                   onClick={() => setSubmenuOpen(false)}
                 >
@@ -218,7 +218,7 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to={`/${i18n.language}/projects`}
+                  to="/projects"
                   className="block px-4 py-2 text-gray-700 hover:bg-blue-100"
                   onClick={() => setSubmenuOpen(false)}
                 >
@@ -230,7 +230,7 @@ const Header = () => {
         </li>
         <li>
           <NavLink
-            to={`/${i18n.language}/services`}
+            to="/services"
             className={({ isActive }) => `py-2 ${isActive ? 'text-blue-950 border-b-2 border-blue-950' : 'text-gray-400 hover:text-blue-950'}`}
           >
             {t('header.services')}
@@ -238,7 +238,7 @@ const Header = () => {
         </li>
         <li>
           <NavLink
-            to={`/${i18n.language}/references`}
+            to="/references"
             className={({ isActive }) => `py-2 ${isActive ? 'text-blue-950 border-b-2 border-blue-950' : 'text-gray-400 hover:text-blue-950'}`}
           >
             {t('header.references')}
@@ -246,7 +246,7 @@ const Header = () => {
         </li>
         <li>
           <NavLink
-            to={`/${i18n.language}/partners`}
+            to="/partners"
             className={({ isActive }) => `py-2 ${isActive ? 'text-blue-950 border-b-2 border-blue-950' : 'text-gray-400 hover:text-blue-950'}`}
           >
             {t('header.partners')}
@@ -254,7 +254,7 @@ const Header = () => {
         </li>
         <li>
           <NavLink
-            to={`/${i18n.language}/licenses`}
+            to="/licenses"
             className={({ isActive }) => `py-2 ${isActive ? 'text-blue-950 border-b-2 border-blue-950' : 'text-gray-400 hover:text-blue-950'}`}
           >
             {t('header.licenses')}
@@ -262,7 +262,7 @@ const Header = () => {
         </li>
         <li>
           <NavLink
-            to={`/${i18n.language}/contact`}
+            to="/contact"
             className={({ isActive }) => `py-2 ${isActive ? 'text-blue-950 border-b-2 border-blue-950' : 'text-gray-400 hover:text-blue-950'}`}
           >
             {t('header.contact')}
@@ -270,7 +270,7 @@ const Header = () => {
         </li>
       </ul>
 
-            <div className="social hidden xl:flex gap-6">
+      <div className="social hidden xl:flex gap-6">
         <a href="https://www.facebook.com/irmastergroup/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faFacebookSquare} className="text-2xl text-gray-400 hover:text-blue-950" />
         </a>

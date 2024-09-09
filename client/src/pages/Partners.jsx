@@ -32,6 +32,9 @@ const Partners = () => {
             Authorization: `Bearer ${import.meta.env.VITE_APP_API_TOKEN}`,
           },
         });
+
+        console.log('Fetched partners:', res.data);
+        
         setPartners(res.data.data);
         setLoading(false);
       } catch (error) {
@@ -56,15 +59,24 @@ const Partners = () => {
       <div className="partners-grid mt-36 mb-16 lg:my-36">
         <h1 className="text-center font-bold text-3xl text-blue-950 opacity-90">{t('header.partners')}</h1>    
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 w-10/12 lg:w-6/12 mx-auto mt-10">
-          {currentItems.map((partner) => (
-            <div key={partner.id} className="border p-4">
-              <img 
-                src={`${import.meta.env.VITE_APP_UPLOAD_URL}${partner.attributes.img.data.attributes.url}`} 
-                alt={`Partner ${partner.id}`} 
-                className="w-full h-[150px] object-contain" 
-              />
-            </div>
-          ))}
+          {currentItems.map((partner) => {
+            const imgUrl = partner.attributes.img?.data?.attributes?.url;
+            const fullImgUrl = imgUrl ? imgUrl : null; 
+
+            return (
+              <div key={partner.id} className="border p-4">
+                {fullImgUrl ? (
+                  <img 
+                    src={fullImgUrl} 
+                    alt={`Partner ${partner.id}`} 
+                    className="w-full h-[150px] object-contain" 
+                  />
+                ) : (
+                  <p>No image available</p>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* Pagination Controls */}

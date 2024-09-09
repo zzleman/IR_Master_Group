@@ -6,7 +6,7 @@ const ServicesList = () => {
   const { t } = useTranslation();
 
   return (
-    <div className='services-container mt-24 mb-0'>
+    <div className='services-container mt-36 mb-0'>
       <h1 className='text-center text-3xl text-blue-950 opacity-90 font-bold'>{t('services.title')}</h1>
       <p className='text-center w-11/12 lg:w-8/12 mx-auto my-5'>{t('services.description')}</p>
       <div className="services-card justify-center my-14 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-11/12">

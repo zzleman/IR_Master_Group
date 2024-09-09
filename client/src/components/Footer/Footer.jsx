@@ -20,37 +20,37 @@ const Footer = () => {
           <h2 className='text-2xl font-semibold'>{t('footer.links')}</h2>
           <ul className='flex flex-col gap-3'>
             <li>
-              <NavLink to={`/${i18n.language}`} className="hover:text-blue-300">
+              <NavLink to={`/`} className="hover:text-blue-300">
                 &#43; {t('footer.home')}
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/${i18n.language}/about`} className="hover:text-blue-300">
+              <NavLink to={`/about`} className="hover:text-blue-300">
                 &#43; {t('footer.about')}
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/${i18n.language}/projects`} className="hover:text-blue-300">
+              <NavLink to={`/projects`} className="hover:text-blue-300">
                 &#43; {t('header.projects')}
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/${i18n.language}/services`} className="hover:text-blue-300">
+              <NavLink to={`/services`} className="hover:text-blue-300">
                 &#43; {t('footer.services')}
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/${i18n.language}/references`} className="hover:text-blue-300">
+              <NavLink to={`/references`} className="hover:text-blue-300">
                 &#43; {t('footer.references')}
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/${i18n.language}/partners`} className="hover:text-blue-300">
+              <NavLink to={`/partners`} className="hover:text-blue-300">
                 &#43; {t('footer.partners')}
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/${i18n.language}/licenses`} className="hover:text-blue-300">
+              <NavLink to={`/licenses`} className="hover:text-blue-300">
                 &#43; {t('footer.licenses')}
               </NavLink>
             </li>

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import debounce from 'lodash.debounce'; // Import debounce
 
 const ReferencesList = () => {
   const { t, i18n } = useTranslation();
@@ -11,17 +12,21 @@ const ReferencesList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState(
+    localStorage.getItem('selectedCategoryId') || 'All'
+  );
   const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage(window.innerWidth));
 
   function getItemsPerPage(width) {
-    if (width < 600) return 4; 
+    if (width < 600) return 4;
     if (width < 1024) return 6;
-    return 9; 
+    return 9;
   }
 
   useEffect(() => {
-    const handleResize = () => setItemsPerPage(getItemsPerPage(window.innerWidth));
+    const handleResize = debounce(() => {
+      setItemsPerPage(getItemsPerPage(window.innerWidth));
+    }, 300); // Debounce the resize event
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -36,14 +41,7 @@ const ReferencesList = () => {
         });
         setCategories(categoriesResponse.data.data);
 
-        let endpoint = `${import.meta.env.VITE_APP_API_URL}/references?populate=*&pagination[start]=0&pagination[limit]=100`;
-
-        if (selectedCategory && selectedCategory !== 'All') {
-          const encodedCategory = encodeURIComponent(selectedCategory);
-          endpoint += `&filters[category][title_${currentLang}][$eq]=${encodedCategory}`;
-        }
-
-        const referencesResponse = await axios.get(endpoint, {
+        const referencesResponse = await axios.get(`${import.meta.env.VITE_APP_API_URL}/references?populate=*&pagination[start]=0&pagination[limit]=100&_sort=id:asc`, {
           headers: {
             Authorization: `Bearer ${import.meta.env.VITE_APP_API_TOKEN}`,
           },
@@ -51,29 +49,26 @@ const ReferencesList = () => {
         setData(referencesResponse.data.data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching data:', error.response ? error.response.data : error.message);
         setError('Failed to load data');
         setLoading(false);
       }
     };
 
     fetchData();
-  }, [selectedCategory, currentLang]);
+  }, [currentLang]);
 
-  useEffect(() => {
-    setSelectedCategory('All');
-  }, []);
+  const filteredData = useMemo(() => {
+    if (selectedCategory === 'All') {
+      return data;
+    }
+    return data.filter(item => item.attributes.category.data.id === parseInt(selectedCategory, 10));
+  }, [data, selectedCategory]);
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  const currentItems = data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
+  const handleCategoryClick = (categoryId) => {
+    setSelectedCategory(categoryId);
+    localStorage.setItem('selectedCategoryId', categoryId);
     setCurrentPage(1);
   };
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
 
   const allCategoryTitle = {
     en: 'All',
@@ -81,11 +76,23 @@ const ReferencesList = () => {
     ru: 'Все',
   };
 
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const currentItems = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-96">
+        <span className="text-xl font-bold">{t('loading...')}</span>
+      </div>
+    );
+  }
+
+  if (error) return <div>{error}</div>;
+
   return (
     <div className="references-slider h-[max-content] my-36">
       <h1 className='text-center font-bold text-3xl text-blue-950 opacity-90'>{t('header.references')}</h1>
       
-      {/* Category Badges */}
       <div className="flex flex-wrap w-full xl:w-max mx-auto gap-3 xl:gap-0 justify-center space-x-4 my-8">
         <button
           className={`px-4 py-2 rounded-full ${selectedCategory === 'All' ? 'bg-blue-950 text-white' : 'bg-gray-300'}`}
@@ -98,8 +105,8 @@ const ReferencesList = () => {
           return (
             <button
               key={cat.id}
-              className={`px-4 py-2 rounded-full ${selectedCategory === categoryTitle ? 'bg-blue-950 text-white' : 'bg-gray-300'}`}
-              onClick={() => handleCategoryClick(categoryTitle)}
+              className={`px-4 py-2 rounded-full ${selectedCategory === String(cat.id) ? 'bg-blue-950 text-white' : 'bg-gray-300'}`}
+              onClick={() => handleCategoryClick(String(cat.id))}
             >
               {categoryTitle}
             </button>
@@ -107,24 +114,30 @@ const ReferencesList = () => {
         })}
       </div>
 
-      {/* References */}
       <div>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 w-10/12 lg:w-6/12 mx-auto mt-10">
-          {currentItems.map((item) => (
-            <div key={item.id} className="border p-4">
-              <img 
-                src={`${import.meta.env.VITE_APP_UPLOAD_URL}${item.attributes.img.data.attributes.url}`} 
-                alt={`Reference ${item.id}`} 
-                className="w-full h-[150px] object-contain" 
-              />
-              <h3 className="text-lg">
-                {item.attributes[`title_${currentLang}`] || item.attributes.title_az}
-              </h3>
-            </div>
-          ))}
+          {currentItems.map((item) => {
+            const imgUrl = item.attributes.img?.data?.attributes?.url;
+
+            return (
+              <div key={item.id} className="border p-4">
+                {imgUrl ? (
+                  <img 
+                    src={imgUrl} 
+                    alt={`Reference ${item.id}`} 
+                    className="w-full h-[150px] object-contain" 
+                  />
+                ) : (
+                  <p>No image available</p>
+                )}
+                <h3 className="text-lg">
+                  {item.attributes[`title_${currentLang}`] || item.attributes.title_az}
+                </h3>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Pagination Controls */}
         <div className="flex justify-center items-center mt-10 lg:my-4">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
